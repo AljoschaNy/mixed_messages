@@ -24,7 +24,9 @@ const endMessage = [
     'And now make it happen!'
 ];
 
+const randomMessage = message =>  message[Math.floor(Math.random()*message.length)];
 
+//console.log(randomMessage(mainMessage));
 
 // Testing
 //console.log(beginningMessage.length);
