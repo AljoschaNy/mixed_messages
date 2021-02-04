@@ -1,6 +1,6 @@
 // Beginning message part
 const beginningMessage = [
-    'My tip to you my friend: ',
+    'My advice to you my friend: ',
     'My tip for today: ',
     'My today\'s advice: '
 ];
@@ -23,14 +23,17 @@ const endMessage = [
     'You\'re the best!',
     'And now make it happen!'
 ];
+// Create RandomMessagePart
+const randomMessagePart = message =>  message[Math.floor(Math.random()*message.length)];
 
-const randomMessage = message =>  message[Math.floor(Math.random()*message.length)];
+//Combine random message parts together
+const randomMessage = () => {
+    const beginning = randomMessagePart(beginningMessage);
+    const main = randomMessagePart(mainMessage);
+    const ending = randomMessagePart(endMessage);
 
-//console.log(randomMessage(mainMessage));
+    return beginning+main+ending;
+};
 
-// Testing
-//console.log(beginningMessage.length);
-//console.log(mainMessage.length);
-//console.log(endMessage.length);
-
-//console.log(beginningMessage[0]+mainMessage[0]+endMessage[0]);
+//testing
+console.log(randomMessage());
